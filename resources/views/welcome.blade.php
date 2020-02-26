@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    koekje
+                    broodje frikandel
                 </div>
 
                 <div class="links">
