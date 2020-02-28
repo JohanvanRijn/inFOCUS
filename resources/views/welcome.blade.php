@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    kokje
+                    Laravel
                 </div>
 
                 <div class="links">
