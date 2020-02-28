@@ -10899,7 +10899,7 @@ a.text-dark:focus {
 
 body {
   font-family: Helvetica;
-  background: #eee;
+  background: #fff;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -10943,7 +10943,7 @@ input {
   width: 100%;
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid #1d1f2e;
+  border-bottom: 1px solid #989898;
 }
 
 input:focus {
@@ -10972,7 +10972,7 @@ label {
   transform: scale(.75);
   left: -2px;
   /* font-size: 14px; */
-  color: #1d1f2e;
+  color: #989898;
 }
 
 
@@ -10991,7 +10991,7 @@ label {
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: #1d1f2e;
+  background: #989898;
   transition: all 0.2s ease;
 }
 
