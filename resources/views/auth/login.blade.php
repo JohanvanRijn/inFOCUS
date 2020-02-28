@@ -9,11 +9,11 @@
                 @csrf
                     <div class="form-group">
                         <label>{{ __('E-Mail Address') }}</label>
-                        <input type="email" name="email"><span class="bar"></span>
+                        <input type="email" name="email" required><span class="bar"></span>
                     </div>
                     <div class="form-group">
                         <label>{{ __('Password') }}</label>
-                        <input type="password" name="password"><span class="bar"></span>
+                        <input type="password" name="password" required><span class="bar"></span>
                     </div>
                     <div class="form-group">
                         <div class="form-check">
