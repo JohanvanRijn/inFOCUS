@@ -27,7 +27,6 @@
                     <div class="form-group">
                         <label>{{ __('Confirm Password') }}</label>
                         <input type="password" name="password_confirmation" required autocomplete="new-password">
-
                     </div>
                     <button type="submit" class="button buttonBlue">{{ __('register') }}
                         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
