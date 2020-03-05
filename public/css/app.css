@@ -8281,6 +8281,7 @@ button.bg-dark:focus {
 
 .shadow-sm {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  z-index: 1;
 }
 
 .shadow {
@@ -8629,7 +8630,9 @@ button.bg-dark:focus {
 .py-4 {
   padding-bottom: 1.5rem !important;
 }
-
+.py-4 {
+  padding: 0!important;
+}
 .pl-4,
 .px-4 {
   padding-left: 1.5rem !important;
