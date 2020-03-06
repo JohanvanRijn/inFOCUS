@@ -96,7 +96,6 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
             <div class="contentX recenties" id="tab2">
                 <h1>RECENTIES</h1>
             </div>
@@ -104,9 +103,6 @@
                 <h1>BEWERKEN</h1>
             </div>
         </div>  
-=======
-        </div>
->>>>>>> 24e2b0e4fcdb0bbfeb0828f1fb0705de81dbb3a0
     </div>
     <div class="footer">
 
