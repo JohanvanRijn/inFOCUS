@@ -96,17 +96,30 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
             <div class="contentX recenties" id="tab2">
                 <h1>RECENTIES</h1>
             </div>
             <div class="contentX bewerken" id="tab3">
-                <h1>BEWERKEN</h1>
+                <form action='{{route("profileUpdate")}}' method='POST'>
+                @method('PUT')
+                @csrf
+                <div class="form-group">
+                    <label>{{ __('Name') }}</label>
+                    <input type="text" name="name" value="{{$user->name}}" required autocomplete="name" autofocus>
+                </div> 
+
+                <div class="form-group">
+                    <label>{{ __('E-Mail Address') }}</label>
+                    <input type="email" name="email" value="{{$user->email}}" required autocomplete="email">
+                </div>
+
+                <button type="submit" class="button buttonBlue">{{ __('Update') }}
+                    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+                </button>
+            </form>
             </div>
         </div>  
-=======
         </div>
->>>>>>> 24e2b0e4fcdb0bbfeb0828f1fb0705de81dbb3a0
     </div>
     <div class="footer">
 
