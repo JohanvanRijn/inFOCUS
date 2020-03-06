@@ -50,7 +50,10 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
+main {
+  background-color: #f7f7f7;
+  margin-top: 73.3px;
+}
 article,
 aside,
 figcaption,
@@ -4524,7 +4527,10 @@ input[type=button].btn-block {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
+  position: fixed;
+  width: 100%;
+  margin-top: -73.3px;
 }
 
 .navbar .container,
