@@ -15,6 +15,16 @@
                     </div>
 
                     <div class="form-group">
+                        <label>{{ __('Lastname') }}</label>
+                        <input type="text" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
+                    </div>
+
+                    <div class="form-group">
+                        <label>{{ __('Username') }}</label>
+                        <input type="text" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+                    </div>
+
+                    <div class="form-group">
                         <label>{{ __('E-Mail Address') }}</label>
                         <input type="email" name="email" value="{{ old('email') }}" required autocomplete="email">
                     </div>

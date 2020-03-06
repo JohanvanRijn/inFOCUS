@@ -31,12 +31,12 @@
             </div>
         </div>
         <div class="menu">
-            <a>Posts</a>
+            <a href={{route('profileHome')}}>Posts</a>
             <a>Recenties</a>
             <a href={{route('profileEdit')}}>Bewerken</a>
         </div>
         <div class="content">
-            <form action='{{route("profileUpdate")}}' methode='POST'>
+            <form action='{{route("profileUpdate")}}' method='POST'>
                 @method('PUT')
                 @csrf
                 <div class="form-group">
