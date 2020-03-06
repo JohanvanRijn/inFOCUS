@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Validator;
 use Auth;
+use App\User;
 
 class ProfileController extends Controller
 {
@@ -23,11 +25,20 @@ class ProfileController extends Controller
 
     public function update(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'email' => 'required|unique:email',
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required',
         ]);
 
-        $validated = $request->validated();
+        if($validator->fails()) {
+            return redirect()->route('profileEdit');
+        } else {
+            $user = Auth::user();
+            $user->name   = $request->input('name');
+            $user->email  = $request->input('email');
+            $user->save();
+
+            return redirect()->route('profileHome');
+        }
     }
 }
