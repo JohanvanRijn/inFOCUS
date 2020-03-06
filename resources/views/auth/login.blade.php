@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card-header">{{ __('Login') }}</div>
-                <form method="POST" action="{{ route('login') }}">
+                <form class="login" method="POST" action="{{ route('login') }}">
                 @csrf
                     <div class="form-group">
                         <label>{{ __('E-Mail Address') }}</label>
