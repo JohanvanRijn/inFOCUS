@@ -36,7 +36,23 @@
             <a href={{route('profileEdit')}}>Bewerken</a>
         </div>
         <div class="content">
+            <form action='{{route("profileUpdate")}}' methode='POST'>
+                @method('PUT')
+                @csrf
+                <div class="form-group">
+                    <label>{{ __('Name') }}</label>
+                    <input type="text" name="name" value="{{$user->name}}" required autocomplete="name" autofocus>
+                </div> 
 
+                <div class="form-group">
+                    <label>{{ __('E-Mail Address') }}</label>
+                    <input type="email" name="email" value="{{$user->email}}" required autocomplete="email">
+                </div>
+
+                <button type="submit" class="button buttonBlue">{{ __('Update') }}
+                    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+                </button>
+            </form>
         </div>
         <div class="footer">
 
