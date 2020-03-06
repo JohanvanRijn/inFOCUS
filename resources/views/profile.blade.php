@@ -13,7 +13,7 @@
             <div class="bannerPic">
                 <div class="bannerText">
                     <div class="name_review">
-                        <h1>Mika Mul</h1>
+                        <h1>{{$user->name}} {{$user->lastname}}</h1>
                         <div class="avReview">
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
@@ -22,7 +22,7 @@
                             <span class="fa fa-star"></span>
                         </div>
                     </div>
-                    <p class="username">mika_JEMJ</p>
+                    <p class="username">{{$user->username}}</p>
                     <p class="omschrijving">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                 </div>
             </div>

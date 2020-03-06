@@ -11,7 +11,7 @@
     <!-- Scripts -->
     <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
     <script type="text/javascript" src="{{ asset('js/login.js') }}" defer></script>
-    
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -25,7 +25,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href='/home'>
+                <a class="navbar-brand" href='/'>
                     <span class="logoDiv">in</span>
                     <span class="logoSpan">FOCUS</span>
                 </a>
@@ -38,7 +38,7 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
-
+                    <form action="/" id="searchform" method="get"> <label for="s" class="hidden"></label><div margin-right="10px"><input type="text" id="s" name="s" value="" style="font-size: 14pt"> <input type="submit" value="Zoeken" id="searchsubmit" style="font-size: 9pt"></div></form>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
