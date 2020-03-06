@@ -50,7 +50,10 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
+main {
+  background-color: #f7f7f7;
+  margin-top: 73.3px;
+}
 article,
 aside,
 figcaption,
@@ -67,7 +70,6 @@ section {
 body {
   margin: 0;
   font-family: "Nunito", sans-serif;
-  font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
   color: #212529;
@@ -3431,7 +3433,7 @@ input[type=button].btn-block {
   min-width: 10rem;
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
-  font-size: 0.9rem;
+  font-size: 16px;
   color: #212529;
   text-align: left;
   list-style: none;
@@ -4524,7 +4526,10 @@ input[type=button].btn-block {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
+  position: fixed;
+  width: 100%;
+  margin-top: -73.3px;
 }
 
 .navbar .container,
@@ -4547,6 +4552,7 @@ input[type=button].btn-block {
   font-size: 1.125rem;
   line-height: inherit;
   white-space: nowrap;
+  padding-top: 10px;
 }
 
 .navbar-brand:hover,
@@ -4560,6 +4566,7 @@ input[type=button].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  font-size: 16px;
 }
 
 .navbar-nav .nav-link {
