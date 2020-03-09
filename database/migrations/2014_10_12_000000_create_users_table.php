@@ -18,11 +18,12 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('username');
             $table->string('email')->unique();
-            $table->string('avatar')->default('user.jpg');
-            $table->string('banner')->default('banner.jpg');
+            $table->string('profile_pic')->default('storage/placeholder_user.jpg');
+            $table->string('banner_pic')->default('storage/placeholder_banner.jpg');
             $table->text('caption')->default('-');
             $table->integer('rating')->default('0');
             $table->string('profile_color')->default('rgb("70, 70, 70")');
+            $table->date('age');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

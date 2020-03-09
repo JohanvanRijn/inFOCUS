@@ -32,7 +32,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href='/'>
+                <a class="navbar-brand" href='/home'>
                     <span class="logoDiv">in</span>
                     <span class="logoSpan">FOCUS</span>
                 </a>
@@ -68,6 +68,9 @@
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('profileHome') }}">
+                                        Profile Page
                                     </a>
 
                                     <form id="logout-form" action="/logout" method="POST" style="display: none;">

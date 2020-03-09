@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
@@ -27,16 +28,29 @@ class ProfileController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required',
         ]);
 
         if($validator->fails()) {
-            return redirect()->route('profileEdit');
+            return redirect()
+                        ->route('profileEdit')
+                        ->withErrors($validator);
         } else {
             $user = Auth::user();
             $user->name   = $request->input('name');
-            $user->email  = $request->input('email');
             $user->caption  = $request->input('caption');
+
+            // dd($request->input('profile_pic'));
+
+            $path_profile = $request->file('profile_pic')
+                                    ->store('avatars', 'public');
+
+            $path_banner = $request->file('banner_pic')
+                                    ->store('banners', 'public');
+                                    
+            $user->profile_pic = $path_profile;
+            $user->banner_pic = $path_banner;
+            $user->age = $request->input('age');
+
             $user->save();
 
             return redirect()->route('profileHome');

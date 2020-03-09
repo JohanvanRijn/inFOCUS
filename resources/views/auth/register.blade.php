@@ -43,6 +43,17 @@
                     @enderror
 
                     <div class="form-group">
+                        <label>{{ __('Leeftijd') }}</label>
+                        <input type="date" name="age" required>
+                    </div>
+
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+
+                    <div class="form-group">
                         <label>{{ __('Password') }}</label>
                         <input type="password" name="password" required autocomplete="new-password">
                     </div>

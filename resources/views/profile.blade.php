@@ -10,7 +10,7 @@
 	</table> -->
 	<div class="container">
         <div class="bannerContainer">
-            <div class="bannerPic">
+            <div class="bannerPic" style='background-image: url("storage/{{$user->banner_pic}}");'>
                 <div class="bannerText">
                     <div class="name_review">
                         <h1>{{$user->name}}</h1>
@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="profilePicContainer">
-                <div class="profilePic"></div>
+                <div class="profilePic" style='background-image: url("storage/{{$user->profile_pic}}")'></div>
             </div>
         </div>
         <div class="menu">
@@ -106,7 +106,7 @@
             <div class="contentX recenties" id="tab2">
                 <h1>RECENTIES</h1>
             </div>
-            <div class="contentX bewerken" id="tab3">
+            <!-- <div class="contentX bewerken" id="tab3">
                 <form action='{{route("profileUpdate")}}' method='POST'>
                 @method('PUT')
                 @csrf
@@ -128,7 +128,28 @@
                 <button type="submit" class="button buttonBlue">{{ __('Update') }}
                     <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
                 </button>
-            </form>
+                </form>
+            </div> -->
+
+            <h1>{{$user->name}}</h1>
+
+            <div>
+                <table>
+                    <tr>
+                        <td>Email</td>
+                        <td>{{$user->email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Gebruikers Naam</td>
+                        <td>{{$user->username}}</td>
+                    </tr>
+                    <tr>
+                        <td>Leeftijd</td>
+                        <td>{{$user->age}}</td>
+                    </tr>
+                </table>
+
+                <a href='{{route("profileEdit")}}'>Edit je profiel Hier</a>
             </div>
         </div>  
     </div>
