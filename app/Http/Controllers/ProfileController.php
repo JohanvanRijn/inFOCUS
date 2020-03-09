@@ -41,14 +41,21 @@ class ProfileController extends Controller
 
             // dd($request->input('profile_pic'));
 
-            $path_profile = $request->file('profile_pic')
-                                    ->store('avatars', 'public');
 
-            $path_banner = $request->file('banner_pic')
-                                    ->store('banners', 'public');
-                                    
-            $user->profile_pic = $path_profile;
-            $user->banner_pic = $path_banner;
+            if($request->file('profile_pic') != null) 
+            { 
+                $path_profile = $request->file('profile_pic')
+                                        ->store('avatars', 'public');
+                $user->profile_pic = $path_profile;
+            }
+
+            if($request->file('banner_pic') != null) 
+            { 
+                $path_banner = $request->file('banner_pic')
+                                        ->store('banners', 'public');
+                $user->banner_pic = $path_banner;
+            }
+
             $user->age = $request->input('age');
 
             $user->save();
