@@ -13,7 +13,7 @@
             <div class="bannerPic">
                 <div class="bannerText">
                     <div class="name_review">
-                        <h1>{{$user->name}} {{$user->lastname}}</h1>
+                        <h1>{{$user->name}}</h1>
                         <div class="avReview">
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
@@ -22,8 +22,15 @@
                             <span class="fa fa-star"></span>
                         </div>
                     </div>
-                    <p class="username">{{$user->username}}</p>
-                    <p class="omschrijving">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p class="username">{{$user->username}}</p>                   
+                        @if($user->caption == '-')
+                            <p class="omschrijving"> Klik <div onclick='openTab(3, this);' class='omschrijving' style='color: blue;'>hier</div> om je caption toe te voegen!
+                            </p>
+                        @else 
+                            <p class="omschrijving"> 
+                                {{$user->caption}} 
+                            </p>
+                        @endif          
                 </div>
             </div>
             <div class="profilePicContainer">
@@ -111,6 +118,11 @@
                 <div class="form-group">
                     <label>{{ __('E-Mail Address') }}</label>
                     <input type="email" name="email" value="{{$user->email}}" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label>{{ __('Caption') }}</label>
+                    <input type="caption" name="caption" value="{{$user->caption}}" required autocomplete="caption">
                 </div>
 
                 <button type="submit" class="button buttonBlue">{{ __('Update') }}

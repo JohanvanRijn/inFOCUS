@@ -36,6 +36,7 @@ class ProfileController extends Controller
             $user = Auth::user();
             $user->name   = $request->input('name');
             $user->email  = $request->input('email');
+            $user->caption  = $request->input('caption');
             $user->save();
 
             return redirect()->route('profileHome');

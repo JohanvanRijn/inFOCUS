@@ -49,6 +49,11 @@
                     <input type="email" name="email" value="{{$user->email}}" required autocomplete="email">
                 </div>
 
+                <div class="form-group">
+                    <label>{{ __('Caption') }}</label>
+                    <input type="text" name="caption" value="{{$user->caption}}" required autocomplete="caption">
+                </div>
+
                 <button type="submit" class="button buttonBlue">{{ __('Update') }}
                     <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
                 </button>
