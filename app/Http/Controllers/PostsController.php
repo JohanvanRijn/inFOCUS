@@ -85,7 +85,11 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Posts::find($id);
+
+        $img = 'storage/'. $post->img_path;
+
+        return view('posts.show', compact('post', 'img'));
     }
 
     /**
@@ -96,7 +100,9 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Posts::find($id);
+
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -108,7 +114,37 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $caption = $request->input('caption');
+        $post =Posts::find($id);
+
+        if( $caption == null ) 
+        {
+            $val = Validator::make($request->all(), [
+                'title' => 'min:3|required'
+            ]);
+        } else {
+            $val = Validator::make($request->all(), [
+                'title' => 'min:3|required',
+                'caption' => 'min:3|required'
+            ]);
+        }
+
+        if( $val->fails() ) 
+        {
+            return redirect()
+                    ->route('posts.create')
+                    ->withErrors($val);
+        } else {
+
+            $post->title = $request->input('title');
+            if( $caption =! null ) { $post->caption = $request->input('caption'); }
+            else { $post->caption = ''; }
+
+            $post->save();
+
+            return redirect()
+                    ->route('profile.home');
+        }
     }
 
     /**
