@@ -14,7 +14,8 @@ class ProfileController extends Controller
     public function home()
     {
     	$user = Auth::user();
-        $posts = Posts::all();
+        $posts = Posts::all()
+                    ->where('user_id', $user->id);
 
     	return view('profile', compact('user', 'posts'));
     }
