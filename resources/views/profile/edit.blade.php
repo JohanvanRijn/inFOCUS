@@ -11,7 +11,7 @@
 	<div class="container">
 
         <div class="content">
-            <form action='{{route("profileUpdate")}}' method='POST' enctype="multipart/form-data">
+            <form action='{{route("profile.update")}}' method='POST' enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
 

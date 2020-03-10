@@ -16,7 +16,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::resource('posts', 'PostsController');
 
-Route::get('/profile', 'ProfileController@home')->name('profileHome');
-Route::get('/profile/edit', 'ProfileController@edit')->name('profileEdit');
-Route::put('/profile', 'ProfileController@update')->name('profileUpdate');
+Route::get('/profile', 'ProfileController@home')->name('profile.home');
+Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
+Route::put('/profile', 'ProfileController@update')->name('profile.update');
+

@@ -43,24 +43,27 @@
                 <li @if(!isset($_GET['tab']) || $_GET['tab'] == 2) @endif class="active" onclick="openTab(2, this);">Recenties</li>
                 <li @if(!isset($_GET['tab']) || $_GET['tab'] == 3) @endif class="active" onclick="openTab(3, this);">Bewerken</li>
             </ul>
+            <a href='{{route("posts.create")}}'>+</a>
         </div>
         <div class="content">
             <div class="contentX posts" id="tab1">
-                <div class="postContainer">
-                    <div class="postpicca postPic1">
+                @foreach($posts as $post)
+                    <div class="postContainer">
+                        <div class="postpicca" style='background-image: url("storage/{{$post->img_path}}");'>
+                        </div>
+                        <div class="postInfo">
+                            <p class="postName">{{$post->title}}</p>
+                            <p class="postReview">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </p>
+                        </div>
                     </div>
-                    <div class="postInfo">
-                        <p class="postName">Test foto</p>
-                        <p class="postReview">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </p>
-                    </div>
-                </div>
-                <div class="postContainer">
+                @endforeach
+                <!-- <div class="postContainer">
                     <div class="postpicca postPic2">
                     </div>
                     <div class="postInfo">
@@ -101,13 +104,13 @@
                             <span class="fa fa-star checked"></span>
                         </p>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="contentX recenties" id="tab2">
                 <h1>RECENTIES</h1>
             </div>
-            <!-- <div class="contentX bewerken" id="tab3">
-                <form action='{{route("profileUpdate")}}' method='POST'>
+                <div class="contentX bewerken" id="tab3">
+                <!-- <form action='{{route("profile.update")}}' method='POST'>
                 @method('PUT')
                 @csrf
                 <div class="form-group">
@@ -149,7 +152,7 @@
                     </tr>
                 </table>
 
-                <a href='{{route("profileEdit")}}'>Edit je profiel Hier</a>
+                <a href='{{route("profile.edit")}}'>Edit je profiel Hier</a>
             </div>
         </div>  
     </div>

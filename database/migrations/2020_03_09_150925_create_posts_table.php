@@ -14,10 +14,10 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->integer('id');
+            $table->bigIncrements('id');
             $table->char('title');
             $table->text('caption');
-            $table->integer('img_save')->default('0'); // 1 is voor 21+, 0 is voor alle leeftijden.
+            $table->integer('img_21+')->default('0'); // 1 is voor 21+, 0 is voor alle leeftijden.
             $table->char('img_path');
             $table->integer('user_id');
             $table->timestamps();

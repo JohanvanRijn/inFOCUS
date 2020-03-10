@@ -7,14 +7,16 @@ use Illuminate\Http\Request;
 use Validator;
 use Auth;
 use App\User;
+use App\Models\Posts;
 
 class ProfileController extends Controller
 {
     public function home()
     {
     	$user = Auth::user();
+        $posts = Posts::all();
 
-    	return view('profile', compact('user'));
+    	return view('profile', compact('user', 'posts'));
     }
 
     public function edit()
@@ -30,9 +32,10 @@ class ProfileController extends Controller
             'name' => 'required',
         ]);
 
-        if($validator->fails()) {
+        if($validator->fails())
+        {
             return redirect()
-                        ->route('profileEdit')
+                        ->route('profile.edit')
                         ->withErrors($validator);
         } else {
             $user = Auth::user();
@@ -40,7 +43,6 @@ class ProfileController extends Controller
             $user->caption  = $request->input('caption');
 
             // dd($request->input('profile_pic'));
-
 
             if($request->file('profile_pic') != null) 
             { 
@@ -60,7 +62,7 @@ class ProfileController extends Controller
 
             $user->save();
 
-            return redirect()->route('profileHome');
+            return redirect()->route('profile.home');
         }
     }
 }
