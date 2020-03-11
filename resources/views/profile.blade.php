@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="profilePicContainer">
-                <div class="profilePic" style='background-image: url("storage/{{$user->profile_pic}}")'></div>
+                <div class="profilePic" style='background-image: url("{{asset('storage/'. $user->profile_pic)}}")'></div>
             </div>
         </div>
         <div class="menu">
@@ -48,9 +48,14 @@
         <div class="content">
             <div class="contentX posts" id="tab1">
                 @foreach($posts as $post)
-                    <a href='{{route("posts.show", $post->id)}}'>
-                        <div class="postContainer">
-                            <div class="postpicca" style='background-image: url("storage/{{$post->img_path}}");'>
+                    <div class="postContainer">
+                        <a href='{{route("posts.show", $post->id)}}'>
+                            <div class="postpicca" style='background-image: url("{{asset('storage/'. $post->img_path)}}");'>
+                            <div class="postOverlay">
+                                <div class="postCaption">
+                                    {{$post->caption}} 
+                                </div>
+                            </div>
                             </div>
                             <div class="postInfo">
                                 <p class="postName">{{$post->title}}</p>
@@ -62,80 +67,14 @@
                                     <span class="fa fa-star"></span>
                                 </p>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 @endforeach
-                <!-- <div class="postContainer">
-                    <div class="postpicca postPic2">
-                    </div>
-                    <div class="postInfo">
-                        <p class="postName">Slechte review</p>
-                        <p class="postReview">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </p>
-                    </div>
-                </div>
-                <div class="postContainer">
-                    <div class="postpicca postPic3">
-                    </div>
-                    <div class="postInfo">
-                        <p class="postName">Pipo de clown</p>
-                        <p class="postReview">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                        </p>
-                    </div>
-                </div>
-                <div class="postContainer">
-                    <div class="postpicca postPic4">
-                    </div>
-                    <div class="postInfo">
-                        <p class="postName">Volgende rij</p>
-                        <p class="postReview">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                        </p>
-                    </div>
-                </div> -->
             </div>
             <div class="contentX recenties" id="tab2">
                 <h1>RECENTIES</h1>
             </div>
                 <div class="contentX bewerken" id="tab3">
-                <!-- <form action='{{route("profile.update")}}' method='POST'>
-                @method('PUT')
-                @csrf
-                <div class="form-group">
-                    <label>{{ __('Name') }}</label>
-                    <input type="text" name="name" value="{{$user->name}}" required autocomplete="name" autofocus>
-                </div> 
-
-                <div class="form-group">
-                    <label>{{ __('E-Mail Address') }}</label>
-                    <input type="email" name="email" value="{{$user->email}}" required autocomplete="email">
-                </div>
-
-                <div class="form-group">
-                    <label>{{ __('Caption') }}</label>
-                    <input type="caption" name="caption" value="{{$user->caption}}" required autocomplete="caption">
-                </div>
-
-                <button type="submit" class="button buttonBlue">{{ __('Update') }}
-                    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-                </button>
-                </form>
-            </div> -->
-
             <h1>{{$user->name}}</h1>
 
             <div>
