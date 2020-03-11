@@ -10,7 +10,7 @@
 	</table> -->
 	<div class="container">
         <div class="bannerContainer">
-            <div class="bannerPic" style='background-image: url("storage/{{$user->banner_pic}}");'>
+            <div class="bannerPic" style='background-image: url("{{asset('storage/'. $user->profile_pic)}}");'>
                 <div class="bannerText">
                     <div class="name_review">
                         <h1>{{$user->name}}</h1>

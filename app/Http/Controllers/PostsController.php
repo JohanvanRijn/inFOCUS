@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Posts;
+use App\Models\Review;
 use Validator;
 use Auth;
 
@@ -86,10 +87,12 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Posts::find($id);
+        $reviews = Review::all()
+                        ->where('post_id', $id);
 
         $img = 'storage/'. $post->img_path;
 
-        return view('posts.show', compact('post', 'img'));
+        return view('posts.show', compact('post', 'img', 'reviews'));
     }
 
     /**
