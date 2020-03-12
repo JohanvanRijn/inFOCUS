@@ -43,7 +43,6 @@
                 <li @if(!isset($_GET['tab']) || $_GET['tab'] == 2) @endif class="active" onclick="openTab(2, this);">Recenties</li>
                 <li @if(!isset($_GET['tab']) || $_GET['tab'] == 3) @endif class="active" onclick="openTab(3, this);">Bewerken</li>
             </ul>
-            <a href='{{route("posts.create")}}'>+</a>
         </div>
         <div class="content">
             <div class="contentX posts" id="tab1">
@@ -70,6 +69,9 @@
                         </a>
                     </div>
                 @endforeach
+                <div class="addPostContainer">
+                    <a href='{{route("posts.create")}}'>+</a>
+                </div>
             </div>
             <div class="contentX recenties" id="tab2">
                 <h1>RECENTIES</h1>

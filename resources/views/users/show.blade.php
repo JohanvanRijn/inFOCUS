@@ -104,9 +104,6 @@
             </div>
         </div>  
     </div>
-    <div class="footer">
-
-    </div>
 
     <script>
     $(document).ready(function() {

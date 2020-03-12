@@ -28,9 +28,6 @@
                 </button>
             </form>
         </div>
-        <div class="footer">
-
-        </div>
     </div>
 
 @endsection
