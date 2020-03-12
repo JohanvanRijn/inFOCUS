@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->integer('img_21+')->default('0'); // 1 is voor 21+, 0 is voor alle leeftijden.
             $table->char('img_path');
             $table->integer('user_id');
+            $table->integer('img_rating')->default('0');
             $table->timestamps();
         });
     }

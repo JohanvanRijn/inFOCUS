@@ -110,6 +110,13 @@
     border-bottom: 1px solid #000;
     color: #000;
 }
+.menu li.active {
+    border-bottom: 1px solid #000;
+    color: #000;
+}
+.contentX {
+    min-height: 510px;
+}
 .footer {
     background-color: #1d1f2e;
     width: 100%;
