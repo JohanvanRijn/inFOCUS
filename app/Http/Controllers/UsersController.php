@@ -64,7 +64,25 @@ class UsersController extends Controller
     	$review->rating = $request->input('rating');
     	$review->post_id = $postId;
     	$review->user_id = Auth::user()->id;
-    	$review->save();
+		$review->save();
+
+		$reviews = Review::all()
+							->where('post_id', $postId);
+		$total_rating = 0;
+		$x = 0;
+
+		foreach($reviews as $review) 
+		{
+			$total_rating = $total_rating + $review->rating;
+			$x++;
+		}
+
+		$average = $total_rating / $x;
+		$average = round($average, 1, PHP_ROUND_HALF_DOWN); 
+
+		$post = Posts::find($postId);
+		$post->img_rating = $average;
+		$post->save();
 
     	return redirect()
     			->route('userPost.show', [ 'id' => $id, 'postId' => $postId ]);

@@ -58,12 +58,7 @@
                             </div>
                             <div class="postInfo">
                                 <p class="postName">{{$post->title}}</p>
-                                <p class="postReview">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
+                                    <p class="postReview" style="--rating:{{$post->img_rating}}">
                                 </p>
                             </div>
                         </a>
@@ -82,20 +77,22 @@
             <div>
                 <table>
                     <tr>
-                        <td>Email</td>
+                        <td class="tableProfile">Email:</td>
                         <td>{{$user->email}}</td>
                     </tr>
                     <tr>
-                        <td>Gebruikers Naam</td>
+                        <td class="tableProfile">Gebruikersnaam:</td>
                         <td>{{$user->username}}</td>
                     </tr>
                     <tr>
-                        <td>Leeftijd</td>
+                        <td class="tableProfile">Leeftijd:</td>
                         <td>{{$user->age}}</td>
+                    </tr>
+                    <tr>
+                        <td><a href='{{route("profile.edit")}}'>Edit je profiel Hier</a></td>
                     </tr>
                 </table>
 
-                <a href='{{route("profile.edit")}}'>Edit je profiel Hier</a>
             </div>
         </div>  
     </div>
