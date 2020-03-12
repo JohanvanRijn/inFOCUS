@@ -12,7 +12,7 @@
 		@foreach($reviews as $review)
 			<h1>{{$review->title}}</h1>
 			<div>{{$review->user->username}}</div>
-			<div>{{$review->caption}}</div>
+			<div>{{$review->body}}</div>
 			<div>{{$review->rating}}</div>
 		@endforeach
 	</div>
