@@ -11141,3 +11141,27 @@ input:focus ~ .highlight {
     opacity: 0;
   }
 }
+
+.footerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 103px 0;
+  text-align: center;
+  flex-direction: column;
+}
+
+.footerLogos, .footerText{
+  color: grey;
+  font-size: 35px;
+  width: auto;
+}
+
+.footerText {
+  font-size: 22px;
+}
+
+.footerLogo2 {
+  font-weight: 600;
+}
+

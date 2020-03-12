@@ -89,7 +89,12 @@
         </main>
     </div>
     <div class="footer">
-
+        <div class="footerContainer">
+            <div class='footerLogo'>
+                <span class='footerLogos footerLogo1'>In</span><span class="footerLogos footerLogo2">FOCUS</span>
+            </div>
+            <div class='footerText'> Like Instagram, But better! </div>
+        </div>
     </div>
 </body>
 </html>
