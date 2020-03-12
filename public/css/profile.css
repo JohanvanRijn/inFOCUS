@@ -225,3 +225,81 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+.reviewPic {
+    height: 700px;
+    width: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    position: relative;
+}
+.reviewPic h1{
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.40);
+}
+.reviewPic div{
+    background-color: rgba(0, 0, 0, 0.40);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    color: #fff;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+.reviewContainer {
+    width: 500px;
+    padding: 0 30px;
+    box-sizing: border-box;
+    float: left;
+}
+.reviewContainer .reviewTitle {
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+.review {
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    margin-bottom: 30px;
+}
+.review h1{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 12px 0;
+    color: #000;
+}
+.review .reviewUser{
+    line-height: 10px;
+    margin-bottom: 15px;
+}
+.review .reviewUser::before{
+    content: '@ ';
+}
+.review div{
+    padding: 0 12px;
+    color: #545454;
+}
+.review .reviewSter {
+    padding: 0 12px 10px;
+}
+.review .reviewContent {
+    font-size: 17px;
+    line-height: 22px;
+    margin-bottom: 15px;
+}
+.reviewPic:hover div {
+    opacity: 1;
+ }
+ .reviewPic h1 a {
+    font-size: 18px;
+    color: #23237d;
+}
