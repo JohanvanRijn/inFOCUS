@@ -9,11 +9,7 @@
                     <div class="name_review">
                         <h1>{{$user->name}}</h1>
                         <div class="avReview">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
+                            <p class="postReview" style="--rating:{{$user_average}}; font-size: 34px;">
                         </div>
                     </div>
                     <p class="username">{{$user->username}}</p>                   
@@ -45,59 +41,12 @@
                             </div>
                             <div class="postInfo">
                                 <p class="postName">{{$post->title}}</p>
-                                <p class="postReview">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
+                                    <p class="postReview" style="--rating:{{$post->img_rating}}">
                                 </p>
                             </div>
                         </div>
                     </a>
                 @endforeach
-                <!-- <div class="postContainer">
-                    <div class="postpicca postPic2">
-                    </div>
-                    <div class="postInfo">
-                        <p class="postName">Slechte review</p>
-                        <p class="postReview">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </p>
-                    </div>
-                </div>
-                <div class="postContainer">
-                    <div class="postpicca postPic3">
-                    </div>
-                    <div class="postInfo">
-                        <p class="postName">Pipo de clown</p>
-                        <p class="postReview">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                        </p>
-                    </div>
-                </div>
-                <div class="postContainer">
-                    <div class="postpicca postPic4">
-                    </div>
-                    <div class="postInfo">
-                        <p class="postName">Volgende rij</p>
-                        <p class="postReview">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                        </p>
-                    </div>
-                </div> -->
             </div>
             <div class="contentX recenties" id="tab2">
                 <h1>RECENTIES</h1>

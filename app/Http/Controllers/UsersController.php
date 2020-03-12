@@ -14,9 +14,22 @@ class UsersController extends Controller
     public function show($id) 
     {
     	$user = User::find($id);
-    	$posts = Posts::all()->where('user_id', $user->id);
+		$posts = Posts::all()->where('user_id', $user->id);
+		
+		$user_average = 0;
+        $x = 0;
+        
+        if(!empty($posts))
+        {
+            foreach($posts as $post) {
+                $user_average = $user_average + $post->img_rating;
+                $x++;
+            }
 
-    	return view('users.show', compact('user', 'posts'));
+            $user_average /= $x;
+        }
+
+    	return view('users.show', compact('user', 'posts', 'user_average'));
     }
 
     public function showPost($id, $postId)
@@ -78,7 +91,6 @@ class UsersController extends Controller
 		}
 
 		$average = $total_rating / $x;
-		$average = round($average, 1, PHP_ROUND_HALF_DOWN); 
 
 		$post = Posts::find($postId);
 		$post->img_rating = $average;

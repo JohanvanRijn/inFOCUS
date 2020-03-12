@@ -210,3 +210,18 @@
     padding-right: 10px;
     font-weight: bold;
 }
+.avReview .postReview {
+    margin: 0;
+    font-size: 25px;    
+    --percent: calc(var(--rating) / 5 * 100%);
+    display: inline-block;
+    font-family: Times;
+    line-height: 1;
+}
+.avReview .postReview::before {
+    content: "★★★★★";
+    letter-spacing: 3px;
+	background: linear-gradient(90deg, orange var(--percent), #8a94a6 var(--percent));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

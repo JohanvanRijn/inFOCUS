@@ -15,11 +15,7 @@
                     <div class="name_review">
                         <h1>{{$user->name}}</h1>
                         <div class="avReview">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
+                            <p class="postReview" style="--rating:{{$user_average}}; font-size: 34px;">
                         </div>
                     </div>
                     <p class="username">{{$user->username}}</p>                   
@@ -58,7 +54,7 @@
                             </div>
                             <div class="postInfo">
                                 <p class="postName">{{$post->title}}</p>
-                                    <p class="postReview" style="--rating:{{$post->img_rating}}">
+                                    <p class="postReview" style="--rating:{{$post->img_rating}};">
                                 </p>
                             </div>
                         </a>

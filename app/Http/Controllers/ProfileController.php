@@ -17,7 +17,20 @@ class ProfileController extends Controller
         $posts = Posts::all()
                     ->where('user_id', $user->id);
 
-    	return view('profile', compact('user', 'posts'));
+        $user_average = 0;
+        $x = 0;
+        
+        if(!empty($posts))
+        {
+            foreach($posts as $post) {
+                $user_average = $user_average + $post->img_rating;
+                $x++;
+            }
+
+            $user_average /= $x;
+        }
+
+    	return view('profile', compact('user', 'posts', 'user_average'));
     }
 
     public function edit()
